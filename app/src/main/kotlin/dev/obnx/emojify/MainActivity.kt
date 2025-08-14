@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             EmojifyTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Banana",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -42,6 +42,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     EmojifyTheme {
-        Greeting("Android")
+        Greeting("Banana")
     }
 }
