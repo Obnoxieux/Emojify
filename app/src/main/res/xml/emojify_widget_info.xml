@@ -1,0 +1,5 @@
+<!-- [START android_compose_glance_providerxml] -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/glance_default_loading_layout">
+</appwidget-provider>
+    <!-- [END android_compose_glance_providerxml] -->
