@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Emojify</string>
+    <string name="emojify_widget_description">Display your daily emoji, picked at random.</string>
 </resources>
