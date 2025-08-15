@@ -13,7 +13,7 @@ kotlinCompilerExtension = "1.5.15"
 
 targetSDK = "36"
 compileSDK = "36"
-minSDK = "29"
+minSDK = "31"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
