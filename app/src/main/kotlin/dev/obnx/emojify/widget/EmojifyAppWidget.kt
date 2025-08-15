@@ -41,3 +41,5 @@ class EmojifyAppWidget : GlanceAppWidget() {
         }
     }
 }
+
+
