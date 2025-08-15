@@ -13,8 +13,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.datastore.preferences.core.edit
 import androidx.glance.appwidget.updateAll
+import dev.obnx.emojify.data.EmojiRepository
 import dev.obnx.emojify.widget.EmojifyAppWidget
+import dev.obnx.emojify.widget.emojiDataStore
 import kotlinx.coroutines.launch
 
 @Composable
@@ -38,6 +41,13 @@ fun EmojifyApp() {
             )
             Button(onClick = {
                 scope.launch {
+                    val repository = EmojiRepository(context)
+                    val newEmoji = repository.getRandomEmoji()
+
+                    context.emojiDataStore.edit { preferences ->
+                        preferences[EmojifyAppWidget.CURRENT_EMOJI] = newEmoji
+                    }
+
                     EmojifyAppWidget().updateAll(context)
                 }
             }) {
