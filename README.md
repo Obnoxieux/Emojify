@@ -9,7 +9,7 @@ For astrology-defying cheaters, it also allows you to manually refresh the emoji
 *   **Daily Emoji Widget:** A sleek home screen widget that displays an emoji. Not much else.
 *   **Widget Customization:**
     *   Attempts to maintain a square aspect ratio.
-    *   Configured for automatic updates approximately every 24 hours (via `updatePeriodMillis`).
+    *   Configured for automatic updates approximately every 2 hours (via `updatePeriodMillis`).
 *   **In-App Widget Update:** A button within the main application to instantly update the emoji on all placed widgets.
 
 ## Project Structure
@@ -35,7 +35,7 @@ For astrology-defying cheaters, it also allows you to manually refresh the emoji
     *   The `EmojifyAppWidget` uses `EmojiGlanceStateDefinition` to manage its current emoji state.
     *   This state is persisted in Jetpack DataStore (`CURRENT_EMOJI_KEY`).
 3.  **Widget Update Mechanisms:**
-    *   **Automatic (Periodic):** The `android:updatePeriodMillis="86400000"` in `emojify_widget_info.xml` tells the Android system to trigger an update for the widget approximately every 24 hours. When this happens, the `EmojifyWidgetReceiver`'s `onUpdate` method is called.
+    *   **Automatic (Periodic):** The `android:updatePeriodMillis` in `emojify_widget_info.xml` tells the Android system to trigger an update for the widget approximately every 2 hours. When this happens, the `EmojifyWidgetReceiver`'s `onUpdate` method is called.
     *   **Manual (In-App):**
         1.  The "Update all placed widgets" button in `EmojifyApp.kt` is clicked.
         2.  A new random emoji is fetched using `EmojiRepository`.
@@ -53,7 +53,6 @@ For astrology-defying cheaters, it also allows you to manually refresh the emoji
 
 ## Future Enhancements / To-Do
 
-*   [ ] Implement logic in `EmojifyWidgetReceiver.onUpdate()` to fetch and save a new emoji for the 24-hour automatic update.
 *   [ ] Add widget configuration options (e.g., background color, emoji size).
 
 ## Dependencies
